@@ -1,5 +1,7 @@
+import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 star = np.array([
     [0, 0.25], [1, 2.25], [2, 0.25], [0, 1.5], [2, 1.5], [0, 0.25]
