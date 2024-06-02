@@ -112,3 +112,34 @@ plot_objects([transformed_star,transformed_batman],["Transformed Star", "Transfo
 example1 = rotate_object(transformed_batman,np.pi / 2)
 example2 = transform_object(rotated_batman,transformation_matrix1)
 plot_objects([example1,example2],["First transformed than rotated", "Firs rotated than transformed"])
+
+scaling_matrix1 = np.array([
+    [0.5, 0],
+    [0, 0.5]
+])
+
+scaled_star1 = np.dot(star, scaling_matrix1)
+
+scaling_matrix2 = np.array([
+    [2, 0],
+    [0, 2]
+])
+
+scaled_star2 = np.dot(star, scaling_matrix2)
+
+rotation_matrix1 = np.array([
+    [np.cos(np.pi / 4), -np.sin(np.pi / 4)],
+    [np.sin(np.pi / 4), np.cos(np.pi / 4)]
+])
+
+# Застосування трансформації
+rotated_star_45 = np.dot(star, rotation_matrix1)
+
+projection_matrix = np.array([
+    [1, 0],
+    [0, 0]
+])
+
+projected_star = np.dot(star, projection_matrix)
+
+plot_objects([scaled_star1,scaled_star2,rotated_star_45,projected_star],["det <1", "det>1","det=1","det=0"])
