@@ -1,7 +1,5 @@
-import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 star = np.array([
     [0, 0.25], [1, 2.25], [2, 0.25], [0, 1.5], [2, 1.5], [0, 0.25]
@@ -110,3 +108,7 @@ transformation_matrix2 = np.array([
 transformed_star = transform_object(star,transformation_matrix1)
 transformed_batman = transform_object(batman,transformation_matrix2)
 plot_objects([transformed_star,transformed_batman],["Transformed Star", "Transformed Batman"])
+
+example1 = rotate_object(transformed_batman,np.pi / 2)
+example2 = transform_object(rotated_batman,transformation_matrix1)
+plot_objects([example1,example2],["First transformed than rotated", "Firs rotated than transformed"])
